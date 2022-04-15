@@ -9,8 +9,9 @@ import UIKit
 
 class PortfolioViewController: UIViewController {
   private let table: UITableView = {
-    let table = UITableView()
+    let table = UITableView(frame: .zero, style: .grouped)
     table.backgroundColor = .clear
+    table.register(PortfolioTableViewCell.self, forCellReuseIdentifier: PortfolioTableViewCell.description())
     return table
   }()
 
@@ -36,16 +37,37 @@ class PortfolioViewController: UIViewController {
   }
 }
 
-extension PortfolioViewController: UITableViewDelegate {}
+extension PortfolioViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    UITableView.automaticDimension
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    "Stocks"
+  }
+}
 
 extension PortfolioViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 2
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 4
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
-    cell.textLabel?.text = "\(indexPath.row)"
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: PortfolioTableViewCell.description(),
+      for: indexPath
+    ) as? PortfolioTableViewCell else {
+      fatalError()
+    }
+    cell.configure()
     return cell
   }
 }

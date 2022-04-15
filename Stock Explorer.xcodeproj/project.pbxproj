@@ -23,6 +23,7 @@
 		DF11E8002809BA70002C7299 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */; };
 		DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8012809BA81002C7299 /* SearchViewController.swift */; };
 		DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8032809BA92002C7299 /* SettingsViewController.swift */; };
+		DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		DF11E8012809BA81002C7299 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DF11E8032809BA92002C7299 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				DF11E7EF2809B90D002C7299 /* Child Coordinators */,
 				DF11E7EE2809B903002C7299 /* Factories */,
 				DF11E7F02809B91C002C7299 /* ViewControllers */,
+				DF11E8062809BEAE002C7299 /* Views */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				DF11E8032809BA92002C7299 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DF11E8062809BEAE002C7299 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				DF11E7FC2809BA4C002C7299 /* SettingsCoordinator.swift in Sources */,
 				DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */,
 				DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */,
+				DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */,
 				DF11E7F62809BA03002C7299 /* ScreensFactory.swift in Sources */,
 				DF11E7EB2809B8E5002C7299 /* ChildCoordinatable.swift in Sources */,
 				DF11E7E92809B8D0002C7299 /* AppCoordinatable.swift in Sources */,

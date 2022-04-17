@@ -28,6 +28,9 @@
 		DF457A22280C4C98003EB2FD /* CVCandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A21280C4C98003EB2FD /* CVCandle.swift */; };
 		DF457A25280C4CB3003EB2FD /* CVStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A24280C4CB3003EB2FD /* CVStyle.swift */; };
 		DF457A27280C4CCB003EB2FD /* CVTimeframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */; };
+		DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A28280C5E23003EB2FD /* APICaller.swift */; };
+		DF457A2D280C5F8F003EB2FD /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */; };
+		DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */; };
 		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
 		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		DF457A21280C4C98003EB2FD /* CVCandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCandle.swift; sourceTree = "<group>"; };
 		DF457A24280C4CB3003EB2FD /* CVStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVStyle.swift; sourceTree = "<group>"; };
 		DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTimeframe.swift; sourceTree = "<group>"; };
+		DF457A28280C5E23003EB2FD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
+		DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext..swift"; sourceTree = "<group>"; };
 		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,7 @@
 		DF11E7E42809B883002C7299 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				DF457A28280C5E23003EB2FD /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 		DF11E7E72809B8AA002C7299 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 				DF11E7EF2809B90D002C7299 /* Child Coordinators */,
 				DF11E7EE2809B903002C7299 /* Factories */,
 				DF11E7F02809B91C002C7299 /* ViewControllers */,
+				DF457A2A280C5F78003EB2FD /* Models */,
 				DF11E8062809BEAE002C7299 /* Views */,
 			);
 			path = Core;
@@ -235,6 +244,22 @@
 			children = (
 			);
 			path = "CV Calculations";
+			sourceTree = "<group>";
+		};
+		DF457A2A280C5F78003EB2FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF457A2B280C5F81003EB2FD /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF457A2B280C5F81003EB2FD /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		DF59E1A2280C1C54005910E6 /* UIPageView tabs */ = {
@@ -347,8 +372,10 @@
 				DF11E7F42809B9EF002C7299 /* AuthorizedCoordinator.swift in Sources */,
 				DF11E7FE2809BA5D002C7299 /* TabBarController.swift in Sources */,
 				DF11E7D12809B6D0002C7299 /* SceneDelegate.swift in Sources */,
+				DF457A2D280C5F8F003EB2FD /* MarketDataResponse.swift in Sources */,
 				DF457A1E280C4C5D003EB2FD /* ChartView.swift in Sources */,
 				DF11E7F22809B9D8002C7299 /* AppCoordinator.swift in Sources */,
+				DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */,
 				DF11E7FA2809BA3B002C7299 /* SearchCoordinator.swift in Sources */,
 				DF457A22280C4C98003EB2FD /* CVCandle.swift in Sources */,
 				DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */,
@@ -360,6 +387,7 @@
 				DF457A27280C4CCB003EB2FD /* CVTimeframe.swift in Sources */,
 				DF11E7F62809BA03002C7299 /* ScreensFactory.swift in Sources */,
 				DF11E7EB2809B8E5002C7299 /* ChildCoordinatable.swift in Sources */,
+				DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */,
 				DF11E7E92809B8D0002C7299 /* AppCoordinatable.swift in Sources */,
 				DF11E7F82809BA27002C7299 /* PortfolioCoordinator.swift in Sources */,
 			);

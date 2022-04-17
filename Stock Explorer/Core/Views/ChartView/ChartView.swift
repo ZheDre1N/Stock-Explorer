@@ -83,6 +83,10 @@ public class ChartView: UIView {
   // 5 part
   private let chartStyleButtonPadding: CGFloat = 16
   private let chartStyleButtonHeight: CGFloat = 32
+  
+  private let labelFont = CTFont(.label, size: 0, language: .none)
+
+  private let labelSize: CGFloat = 11
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -182,10 +186,8 @@ public class ChartView: UIView {
       return
     }
 
-    let textFont = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
     for valueIndex in 0..<dataSource.count where valueIndex % 16 == 0 {
       let textLabelLayer = CATextLayer()
-      let textLabelLayerHeight: CGFloat = 9
       let label = dataSource[valueIndex].date
       let textLabelLayerWidth: CGFloat = 150
 
@@ -193,7 +195,7 @@ public class ChartView: UIView {
         x: CGFloat(valueIndex) * xPointSpace - textLabelLayerWidth / 2,
         y: 26,
         width: textLabelLayerWidth,
-        height: textLabelLayerHeight
+        height: labelSize
       )
 
       let degrees = 270.0
@@ -207,8 +209,8 @@ public class ChartView: UIView {
 
       textLabelLayer.foregroundColor = cvStyle.labelColor
       textLabelLayer.contentsScale = UIScreen.main.scale
-      textLabelLayer.font = textFont
-      textLabelLayer.fontSize = textLabelLayerHeight
+      textLabelLayer.font = labelFont
+      textLabelLayer.fontSize = labelSize
       textLabelLayer.string = label
       textLabelLayer.alignmentMode = .center
       chartGridLayer.addSublayer(textLabelLayer)
@@ -279,7 +281,6 @@ public class ChartView: UIView {
       return
     }
 
-    let textFont = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
     for valueIndex in 0..<dataSource.count where valueIndex % 16 == 0 {
 
       let textLabelLayer = CATextLayer()
@@ -294,8 +295,8 @@ public class ChartView: UIView {
       )
       textLabelLayer.foregroundColor = cvStyle.labelColor
       textLabelLayer.contentsScale = UIScreen.main.scale
-      textLabelLayer.font = textFont
-      textLabelLayer.fontSize = 12
+      textLabelLayer.font = labelFont
+      textLabelLayer.fontSize = labelSize
       textLabelLayer.string = label
       textLabelLayer.alignmentMode = .center
       chartLabelsView.layer.addSublayer(textLabelLayer)
@@ -496,7 +497,6 @@ public class ChartView: UIView {
       let maxCGFloat = CGFloat(max)
 
       let gridValue: [CGFloat] = [0, 0.25, 0.5, 0.75, 1]
-      let textFont = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
       for value in gridValue {
         let textLayerY: CGFloat = chartView.frame.size.height * CGFloat(value) + chartViewPadding
         let textLayer = CATextLayer()
@@ -514,8 +514,8 @@ public class ChartView: UIView {
 
         textLayer.foregroundColor = cvStyle.labelColor
         textLayer.contentsScale = UIScreen.main.scale
-        textLayer.font = textFont
-        textLayer.fontSize = textLayerHeight
+        textLayer.font = labelFont
+        textLayer.fontSize = labelSize
         textLayer.string = "\(round(textValue * 10) / 10 )"
         textLayer.alignmentMode = .center
 
@@ -538,27 +538,25 @@ public class ChartView: UIView {
        let max = visibleFullDataSource.max()?.close,
        let min = visibleFullDataSource.min()?.close {
 
-      let textFont = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
-      let textLayerHeight: CGFloat = 12
 
       let screenHeight = chartView.frame.size.height
       let valueRange = CGFloat(max - min)
       let valueHeight = CGFloat(max - candlePrice)
-      let textLayerY = screenHeight * valueHeight / valueRange + chartViewPadding - textLayerHeight / 2
+      let textLayerY = screenHeight * valueHeight / valueRange + chartViewPadding - labelSize / 2
 
       pointerPriceLabel.frame = CGRect(
         x: 0,
         y: textLayerY,
         width: auxiliaryPriceView.frame.size.width,
-        height: textLayerHeight + textLayerHeight * 0.25
+        height: labelSize + labelSize * 0.25
       )
 
       pointerPriceLabel.removeAllAnimations()
       pointerPriceLabel.foregroundColor = cvStyle.labelColor
       pointerPriceLabel.backgroundColor = cvStyle.currentPricePointerColor.cgColor
       pointerPriceLabel.contentsScale = UIScreen.main.scale
-      pointerPriceLabel.font = textFont
-      pointerPriceLabel.fontSize = textLayerHeight
+      pointerPriceLabel.font = labelFont
+      pointerPriceLabel.fontSize = labelSize
       pointerPriceLabel.string = "\(round(candlePrice * 10) / 10)"
       pointerPriceLabel.alignmentMode = .center
       auxiliaryPriceView.layer.addSublayer(pointerPriceLabel)
@@ -701,7 +699,6 @@ public class ChartView: UIView {
   }
 
   private func drawLongPressTextLabel(point: CGPoint, candle: CVCandle, selfPoint: CGPoint) {
-    let textLayerHeight: CGFloat = 12
     var offsetX: CGFloat
 
     if selfPoint.x < 30 {
@@ -722,8 +719,8 @@ public class ChartView: UIView {
     longPressTextLabel.foregroundColor = cvStyle.labelColor
     longPressTextLabel.backgroundColor = cvStyle.currentPricePointerColor.cgColor
     longPressTextLabel.contentsScale = UIScreen.main.scale
-    longPressTextLabel.font = CTFontCreateWithName(UIFont.systemFont(ofSize: 0).fontName as CFString, 0, nil)
-    longPressTextLabel.fontSize = textLayerHeight
+    longPressTextLabel.font = labelFont
+    longPressTextLabel.fontSize = labelSize
     longPressTextLabel.string = candle.label
     longPressTextLabel.alignmentMode = .center
     chartLabelsView.layer.addSublayer(longPressTextLabel)

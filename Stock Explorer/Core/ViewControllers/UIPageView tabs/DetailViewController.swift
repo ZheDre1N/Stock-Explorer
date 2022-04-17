@@ -21,18 +21,6 @@ class DetailViewController: UIViewController {
       let fullChartVC = FullChartViewController()
     }
     chartView.frame.size.height = 350
-    var dataSource: [CVCandle] = []
-    for index in 0...350 {
-      dataSource.append(CVCandle(
-        date: index.description,
-        label: index.description,
-        close: Double(index) * 2 + (index % 2 == 0 ? 0 : 15),
-        high: 1,
-        low: 1,
-        open: 1
-      ))
-    }
-    chartView.dataSource = dataSource
     return chartView
   }()
 
@@ -40,6 +28,17 @@ class DetailViewController: UIViewController {
     super.viewDidLoad()
     configureViewController()
     configureTableView()
+
+    APICaller.shared.marketData(for: "CRM") { result in
+      switch result {
+      case .success(let response):
+        DispatchQueue.main.async {
+          self.chartView.dataSource = response.candleSticks
+        }
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
   }
 
   override func viewDidLayoutSubviews() {

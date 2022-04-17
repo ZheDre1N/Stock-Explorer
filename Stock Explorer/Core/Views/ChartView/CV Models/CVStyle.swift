@@ -12,22 +12,22 @@ public struct CVStyle {
   var borderColor: UIColor = .label
 
   // change style button
-  var changeStyleButtonColor: UIColor = .systemCyan
+  var changeStyleButtonColor: UIColor = .SECyan
 
   // fullScreen button
   var fullButtonTintColor: UIColor = .label
 
   // line chart color
-  var chartLineColor: UIColor = .systemCyan
-  var gradients: [CGColor] = [UIColor.systemCyan.cgColor, UIColor.clear.cgColor]
+  var chartLineColor: UIColor = .SECyan
+  var gradients: [CGColor] = [UIColor.SECyan.cgColor, UIColor.clear.cgColor]
 
   // text
   var labelColor: CGColor = UIColor.label.cgColor
 
   // pointer
-  var currentPricePointerColor: UIColor = .systemCyan
+  var currentPricePointerColor: UIColor = .SECyan
 
   // long press point
   var internPointColor: UIColor = .secondarySystemBackground
-  var externalPointColor: UIColor = .systemCyan
+  var externalPointColor: UIColor = .SECyan
 }

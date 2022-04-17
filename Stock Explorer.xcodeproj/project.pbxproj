@@ -31,6 +31,7 @@
 		DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A28280C5E23003EB2FD /* APICaller.swift */; };
 		DF457A2D280C5F8F003EB2FD /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */; };
 		DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */; };
+		DF457A31280C77A8003EB2FD /* UIColor + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A30280C77A8003EB2FD /* UIColor + Ext..swift */; };
 		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
 		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		DF457A28280C5E23003EB2FD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 		DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext..swift"; sourceTree = "<group>"; };
+		DF457A30280C77A8003EB2FD /* UIColor + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext..swift"; sourceTree = "<group>"; };
 		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */,
+				DF457A30280C77A8003EB2FD /* UIColor + Ext..swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				DF457A1E280C4C5D003EB2FD /* ChartView.swift in Sources */,
 				DF11E7F22809B9D8002C7299 /* AppCoordinator.swift in Sources */,
 				DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */,
+				DF457A31280C77A8003EB2FD /* UIColor + Ext..swift in Sources */,
 				DF11E7FA2809BA3B002C7299 /* SearchCoordinator.swift in Sources */,
 				DF457A22280C4C98003EB2FD /* CVCandle.swift in Sources */,
 				DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */,

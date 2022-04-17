@@ -24,6 +24,9 @@
 		DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8012809BA81002C7299 /* SearchViewController.swift */; };
 		DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8032809BA92002C7299 /* SettingsViewController.swift */; };
 		DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */; };
+		DF59E19F280C1A9C005910E6 /* ChartView in Frameworks */ = {isa = PBXBuildFile; productRef = DF59E19E280C1A9C005910E6 /* ChartView */; };
+		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
+		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		DF11E8012809BA81002C7299 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DF11E8032809BA92002C7299 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
+		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
+		DF59E1A6280C2A3B005910E6 /* ChartView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ChartView; path = ../../../../../../../Desktop/ChartView; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF59E19F280C1A9C005910E6 /* ChartView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,7 @@
 		DF11E7C22809B6D0002C7299 = {
 			isa = PBXGroup;
 			children = (
+				DF59E1A5280C2A3B005910E6 /* Packages */,
 				DF11E7CD2809B6D0002C7299 /* Stock Explorer */,
 				DF11E7CC2809B6D0002C7299 /* Products */,
 			);
@@ -184,6 +192,7 @@
 				DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */,
 				DF11E8012809BA81002C7299 /* SearchViewController.swift */,
 				DF11E8032809BA92002C7299 /* SettingsViewController.swift */,
+				DF59E1A2280C1C54005910E6 /* UIPageView tabs */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +203,23 @@
 				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DF59E1A2280C1C54005910E6 /* UIPageView tabs */ = {
+			isa = PBXGroup;
+			children = (
+				DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */,
+				DF59E1A3280C2865005910E6 /* FullChartViewController.swift */,
+			);
+			path = "UIPageView tabs";
+			sourceTree = "<group>";
+		};
+		DF59E1A5280C2A3B005910E6 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				DF59E1A6280C2A3B005910E6 /* ChartView */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +239,9 @@
 			dependencies = (
 			);
 			name = "Stock Explorer";
+			packageProductDependencies = (
+				DF59E19E280C1A9C005910E6 /* ChartView */,
+			);
 			productName = "Stock Explorer";
 			productReference = DF11E7CB2809B6D0002C7299 /* Stock Explorer.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +270,9 @@
 				Base,
 			);
 			mainGroup = DF11E7C22809B6D0002C7299;
+			packageReferences = (
+				DF59E19D280C1A9C005910E6 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = DF11E7CC2809B6D0002C7299 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,9 +326,11 @@
 				DF11E7D12809B6D0002C7299 /* SceneDelegate.swift in Sources */,
 				DF11E7F22809B9D8002C7299 /* AppCoordinator.swift in Sources */,
 				DF11E7FA2809BA3B002C7299 /* SearchCoordinator.swift in Sources */,
+				DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */,
 				DF11E7FC2809BA4C002C7299 /* SettingsCoordinator.swift in Sources */,
 				DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */,
 				DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */,
+				DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */,
 				DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */,
 				DF11E7F62809BA03002C7299 /* ScreensFactory.swift in Sources */,
 				DF11E7EB2809B8E5002C7299 /* ChildCoordinatable.swift in Sources */,
@@ -511,6 +545,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF59E19D280C1A9C005910E6 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZheDre1N/ChartView.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF59E19E280C1A9C005910E6 /* ChartView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF59E19D280C1A9C005910E6 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = ChartView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF11E7C32809B6D0002C7299 /* Project object */;
 }

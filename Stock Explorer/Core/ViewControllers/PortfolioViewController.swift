@@ -40,6 +40,8 @@ class PortfolioViewController: UIViewController {
 extension PortfolioViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    let detailVC = DetailViewController()
+    navigationController?.pushViewController(detailVC, animated: true)
   }
 
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

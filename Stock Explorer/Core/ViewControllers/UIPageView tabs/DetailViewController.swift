@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ChartView
 
 class DetailViewController: UIViewController {
   private let table: UITableView = {
@@ -20,7 +19,6 @@ class DetailViewController: UIViewController {
     let chartView = ChartView()
     chartView.fullScreenButtonHandler = {
       let fullChartVC = FullChartViewController()
-      print("hi")
     }
     chartView.frame.size.height = 350
     var dataSource: [CVCandle] = []
@@ -69,7 +67,7 @@ extension DetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     0
   }
-  
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     UITableViewCell()
   }

@@ -2,15 +2,9 @@ import UIKit
 
 // swiftlint:disable all
 class ChartView: UIView {
-
-  // MARK: Dependencies
-  public var chartStyle: ChartStyleProvider = DefaultChartStyle()
-    
-
   // MARK: Interface
   public var dataSource: [CVCandle]? {
     didSet {
-      // Recalculate chart's data and scroll to right
       setupView()
       let rightOffset = CGPoint(x: chartScrollView.contentSize.width, y: 0)
       chartScrollView.setContentOffset(rightOffset, animated: false)
@@ -23,6 +17,10 @@ class ChartView: UIView {
   public func startAnimating(withMockData isMocked: Bool) {}
   public func stopAnimating() {}
 
+  // MARK: Dependencies
+  private var chartStyle: ChartStyleProvider = DefaultChartStyle()
+  private var chartMath: ChartMathProvider = DefaultChartMath()
+  
   // MARK: Declarations
   private var drawableDataSourceRange: ClosedRange<Int>?
   private var drawableDataPoints: [CGPoint]?
@@ -218,7 +216,13 @@ class ChartView: UIView {
   private func drawLineChartLayer() { // 2.1.2 part
     guard
       let dataSource = dataSource,
-      let drawableDataSourceRange = getDrawableRange(with: drawablePointCountExceedFrameWidth)
+      let drawableDataSourceRange = chartMath.getDrawableDataSourceRange(
+        offsetX: chartScrollView.contentOffset.x,
+        viewWidth: chartScrollView.frame.size.width,
+        dataSourceCount: dataSource.count,
+        xPointSpace: xPointSpace,
+        visibility: drawablePointCountExceedFrameWidth
+      )
     else {
       return
     }
@@ -331,7 +335,13 @@ class ChartView: UIView {
       return
     }
 
-    if let visibleViewRange = getDrawableRange(with: 0) {
+    if let visibleViewRange = chartMath.getDrawableDataSourceRange(
+      offsetX: chartScrollView.contentOffset.x,
+      viewWidth: chartScrollView.frame.size.width,
+      dataSourceCount: dataSource.count,
+      xPointSpace: xPointSpace,
+      visibility: 0
+    ) {
       let visibleViewDataSource = Array(dataSource[visibleViewRange.lowerBound..<visibleViewRange.upperBound])
       let candle = visibleViewDataSource.last
       drawPointerPriceLabel(candle: candle)
@@ -438,23 +448,6 @@ class ChartView: UIView {
       path.addLine(to: drawableDataPoints[pointIndex])
     }
     return path
-  }
-
-  func getDrawableRange(with visibility: Int) -> ClosedRange<Int>? {
-    let offsetX = chartScrollView.contentOffset.x
-    let chartVisibleWidth = chartScrollView.frame.size.width + xPointSpace
-    var minVisibleIndex = Int(offsetX) / Int(xPointSpace) - visibility
-    var maxVisibleIndex = (Int(offsetX) + Int(chartVisibleWidth)) / Int(xPointSpace) + visibility
-
-    if minVisibleIndex < 0 {
-      minVisibleIndex = 0
-    }
-
-    if let dataSource = dataSource, maxVisibleIndex > dataSource.count {
-      maxVisibleIndex = dataSource.count
-    }
-
-    return minVisibleIndex...maxVisibleIndex
   }
 
   private func getDrawableDataPoints(
@@ -728,7 +721,13 @@ class ChartView: UIView {
     guard
       let dataSource = dataSource,
       !dataSource.isEmpty,
-      let visibleRange = getDrawableRange(with: drawablePointCountExceedFrameWidth)
+      let visibleRange = chartMath.getDrawableDataSourceRange(
+        offsetX: chartScrollView.contentOffset.x,
+        viewWidth: chartScrollView.frame.size.width,
+        dataSourceCount: dataSource.count,
+        xPointSpace: xPointSpace,
+        visibility: drawablePointCountExceedFrameWidth
+      )
     else {
       return nil
     }
@@ -752,6 +751,9 @@ class ChartView: UIView {
 
 extension ChartView: UIScrollViewDelegate {
   public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    // update drawableDataSourceRange
+    // update drawableDataSourcePoints
+    
     setNeedsLayout()
   }
 }

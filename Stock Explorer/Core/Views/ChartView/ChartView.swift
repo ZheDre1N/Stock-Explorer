@@ -20,9 +20,10 @@ class ChartView: UIView {
   // MARK: Dependencies
   private var chartStyle: ChartStyleProvider = DefaultChartStyle()
   private var chartMath: ChartMathProvider = DefaultChartMath()
+  private var chartGridLayerProvider: ChartGridLayerProvider = DefaultGridLayerProvider()
   
   // MARK: Declarations
-  private var drawableDataSourceRange: ClosedRange<Int>?
+  private var drawableDataSourceRange: Range<Int>?
   private var drawableDataPoints: [CGPoint]?
   private let drawablePointCountExceedFrameWidth = 40
 
@@ -39,7 +40,7 @@ class ChartView: UIView {
   private let chartLabelsView: UIView = .init() // 2.3 part
 
   // ChartView, 2.1 part
-  private let chartGridLayer: CALayer = .init() // 2.1.1 part
+  private var chartGridLayer: CALayer = .init() // 2.1.1 part
   private let chartDataLayer: CALayer = .init() // 2.1.2 part
   private let chartGradientLayer: CAGradientLayer = .init() // 2.1.3 part
   private let chartGradientLayerMask: CAShapeLayer = .init() // 2.1.4 part
@@ -81,7 +82,6 @@ class ChartView: UIView {
   private let chartStyleButtonHeight: CGFloat = 32
   
   private let labelFont = CTFont(.label, size: 0, language: .none)
-
   private let labelSize: CGFloat = 11
 
   override init(frame: CGRect) {
@@ -178,38 +178,12 @@ class ChartView: UIView {
     )
     chartScrollView.layer.addSublayer(chartGridLayer)
 
-    guard let dataSource = dataSource else {
-      return
-    }
-
-    for valueIndex in 0..<dataSource.count where valueIndex % 16 == 0 {
-      let textLabelLayer = CATextLayer()
-      let label = dataSource[valueIndex].date
-      let textLabelLayerWidth: CGFloat = 150
-
-      textLabelLayer.frame = CGRect(
-        x: CGFloat(valueIndex) * xPointSpace - textLabelLayerWidth / 2,
-        y: 26,
-        width: textLabelLayerWidth,
-        height: labelSize
+    if let dataSource = dataSource {
+      chartGridLayer = chartGridLayerProvider.drawGridLayer(
+        on: chartGridLayer,
+        dataSource: dataSource,
+        xPointSpace: xPointSpace
       )
-
-      let degrees = 270.0
-      let radians = CGFloat(degrees * Double.pi / 180)
-      textLabelLayer.transform = CATransform3DMakeRotation(
-        radians,
-        0.0,
-        0.0,
-        1.0
-      )
-
-      textLabelLayer.foregroundColor = chartStyle.labelColor
-      textLabelLayer.contentsScale = UIScreen.main.scale
-      textLabelLayer.font = labelFont
-      textLabelLayer.fontSize = labelSize
-      textLabelLayer.string = label
-      textLabelLayer.alignmentMode = .center
-      chartGridLayer.addSublayer(textLabelLayer)
     }
   }
 
@@ -227,7 +201,12 @@ class ChartView: UIView {
       return
     }
     self.drawableDataSourceRange = drawableDataSourceRange
-    drawableDataPoints = getDrawableDataPoints(with: dataSource, and: drawableDataSourceRange)
+    drawableDataPoints = chartMath.getDrawableDataPoints(
+      viewHeight: chartView.frame.height,
+      xPointSpace: xPointSpace,
+      with: dataSource,
+      and: drawableDataSourceRange
+    )
     drawLineChart()
     chartView.layer.addSublayer(chartDataLayer)
   }
@@ -450,29 +429,7 @@ class ChartView: UIView {
     return path
   }
 
-  private func getDrawableDataPoints(
-    with dataSource: [CVCandle],
-    and range: ClosedRange<Int>
-  ) -> [CGPoint] {
 
-    let visibleDataSource = Array(dataSource[range.lowerBound..<range.upperBound])
-
-    if let max = visibleDataSource.max()?.close,
-       let min = visibleDataSource.min()?.close {
-
-      var result: [CGPoint] = []
-      let minMaxRange = CGFloat(max - min)
-
-      for i in range.lowerBound..<range.upperBound {
-        let value = CGFloat(dataSource[i].close)
-        let height = chartView.frame.height / minMaxRange * (CGFloat(max) - value)
-        let point = CGPoint(x: CGFloat(i) * xPointSpace, y: height)
-        result.append(point)
-      }
-      return result
-    }
-    return []
-  }
 
   private func drawGridTextLayer() {
     guard let dataSource = dataSource, let visibleRange = drawableDataSourceRange else {
@@ -555,10 +512,10 @@ class ChartView: UIView {
   }
 
   private func drawPointerHorisontalLine(candle: CVCandle?) {
-    guard let dataSource = dataSource, let visibleFullRange = drawableDataSourceRange else {
+    guard let dataSource = dataSource, let drawableDataSourceRange = drawableDataSourceRange else {
       return
     }
-    let visibleFullDataSource = Array(dataSource[visibleFullRange.lowerBound..<visibleFullRange.upperBound])
+    let visibleFullDataSource = Array(dataSource[drawableDataSourceRange.lowerBound..<drawableDataSourceRange.upperBound])
 
     if let candlePrice = candle?.close,
        let max = visibleFullDataSource.max()?.close,
@@ -721,28 +678,21 @@ class ChartView: UIView {
     guard
       let dataSource = dataSource,
       !dataSource.isEmpty,
-      let visibleRange = chartMath.getDrawableDataSourceRange(
-        offsetX: chartScrollView.contentOffset.x,
-        viewWidth: chartScrollView.frame.size.width,
-        dataSourceCount: dataSource.count,
-        xPointSpace: xPointSpace,
-        visibility: drawablePointCountExceedFrameWidth
-      )
+      let drawableDataSourceRange = drawableDataSourceRange,
+      let drawableDataPoints = drawableDataPoints
     else {
       return nil
     }
 
-    let visiblePoints = getDrawableDataPoints(with: dataSource, and: visibleRange)
-
-    var nearestPoint = visiblePoints[0]
+    var nearestPoint = drawableDataPoints[0]
     var nearestIndex = 0
     var minGap: CGFloat = CGFloat.infinity
 
-    for (index, point) in visiblePoints.enumerated() {
+    for (index, point) in drawableDataPoints.enumerated() {
       if abs(point.x - pressPoint.x) < minGap {
         minGap = abs(point.x - pressPoint.x)
         nearestPoint = point
-        nearestIndex = visibleRange.lowerBound + index
+        nearestIndex = drawableDataSourceRange.lowerBound + index
       }
     }
     return (point: nearestPoint, chartCandle: dataSource[nearestIndex])
@@ -751,10 +701,13 @@ class ChartView: UIView {
 
 extension ChartView: UIScrollViewDelegate {
   public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    // update drawableDataSourceRange
-    // update drawableDataSourcePoints
-    
-    setNeedsLayout()
+    print("did scroll")
+
+    if let dataSource = dataSource {
+      // update drawableDataSourceRange
+      // update drawableDataSourcePoints
+      setNeedsLayout()
+    }
   }
 }
 // swiftlint:enable all

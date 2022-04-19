@@ -19,27 +19,14 @@ protocol ChartStyleProvider {
   var externalPointColor: UIColor { get set }
 }
 
-public struct DefaultChartStyle: ChartStyleProvider {
-  // chart borders
+public class DefaultChartStyle: ChartStyleProvider {
   var borderColor: UIColor = .label
-
-  // change style button
   var changeStyleButtonColor: UIColor = .SECyan
-
-  // fullScreen button
   var fullButtonTintColor: UIColor = .label
-
-  // line chart color
   var chartLineColor: UIColor = .SECyan
   var gradients: [CGColor] = [UIColor.SECyan.cgColor, UIColor.clear.cgColor]
-
-  // text
   var labelColor: CGColor = UIColor.label.cgColor
-
-  // pointer
   var currentPricePointerColor: UIColor = .SECyan
-
-  // long press point
   var internPointColor: UIColor = .secondarySystemBackground
   var externalPointColor: UIColor = .SECyan
 }

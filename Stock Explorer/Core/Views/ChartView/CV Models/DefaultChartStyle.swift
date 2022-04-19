@@ -7,7 +7,19 @@
 
 import UIKit
 
-public struct CVStyle {
+protocol ChartStyleProvider {
+  var borderColor: UIColor { get set }
+  var changeStyleButtonColor: UIColor { get set }
+  var fullButtonTintColor: UIColor { get set }
+  var chartLineColor: UIColor { get set }
+  var gradients: [CGColor] { get set }
+  var labelColor: CGColor { get set }
+  var currentPricePointerColor: UIColor { get set }
+  var internPointColor: UIColor { get set }
+  var externalPointColor: UIColor { get set }
+}
+
+public struct DefaultChartStyle: ChartStyleProvider {
   // chart borders
   var borderColor: UIColor = .label
 

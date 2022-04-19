@@ -26,12 +26,18 @@
 		DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */; };
 		DF457A1E280C4C5D003EB2FD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A1D280C4C5D003EB2FD /* ChartView.swift */; };
 		DF457A22280C4C98003EB2FD /* CVCandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A21280C4C98003EB2FD /* CVCandle.swift */; };
-		DF457A25280C4CB3003EB2FD /* CVStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A24280C4CB3003EB2FD /* CVStyle.swift */; };
+		DF457A25280C4CB3003EB2FD /* DefaultChartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A24280C4CB3003EB2FD /* DefaultChartStyle.swift */; };
 		DF457A27280C4CCB003EB2FD /* CVTimeframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */; };
 		DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A28280C5E23003EB2FD /* APICaller.swift */; };
 		DF457A2D280C5F8F003EB2FD /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */; };
 		DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */; };
 		DF457A31280C77A8003EB2FD /* UIColor + Ext..swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A30280C77A8003EB2FD /* UIColor + Ext..swift */; };
+		DF457A35280C7B98003EB2FD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A34280C7B98003EB2FD /* Section.swift */; };
+		DF457A37280C7BB8003EB2FD /* SettingsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A36280C7BB8003EB2FD /* SettingsTableViewModel.swift */; };
+		DF457A39280C7BE7003EB2FD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A38280C7BE7003EB2FD /* ProfileTableViewCell.swift */; };
+		DF457A3B280C7C00003EB2FD /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A3A280C7C00003EB2FD /* DefaultTableViewCell.swift */; };
+		DF457A3D280C7C1A003EB2FD /* StaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A3C280C7C1A003EB2FD /* StaticTableViewCell.swift */; };
+		DF457A3F280C7C42003EB2FD /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF457A3E280C7C42003EB2FD /* SwitchTableViewCell.swift */; };
 		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
 		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,12 +64,18 @@
 		DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
 		DF457A1D280C4C5D003EB2FD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		DF457A21280C4C98003EB2FD /* CVCandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCandle.swift; sourceTree = "<group>"; };
-		DF457A24280C4CB3003EB2FD /* CVStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVStyle.swift; sourceTree = "<group>"; };
+		DF457A24280C4CB3003EB2FD /* DefaultChartStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChartStyle.swift; sourceTree = "<group>"; };
 		DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTimeframe.swift; sourceTree = "<group>"; };
 		DF457A28280C5E23003EB2FD /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 		DF457A2E280C6860003EB2FD /* DateFormatter + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext..swift"; sourceTree = "<group>"; };
 		DF457A30280C77A8003EB2FD /* UIColor + Ext..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext..swift"; sourceTree = "<group>"; };
+		DF457A34280C7B98003EB2FD /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		DF457A36280C7BB8003EB2FD /* SettingsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewModel.swift; sourceTree = "<group>"; };
+		DF457A38280C7BE7003EB2FD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		DF457A3A280C7C00003EB2FD /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
+		DF457A3C280C7C1A003EB2FD /* StaticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewCell.swift; sourceTree = "<group>"; };
+		DF457A3E280C7C42003EB2FD /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +228,7 @@
 		DF11E8062809BEAE002C7299 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DF457A32280C7ABE003EB2FD /* Table Cells */,
 				DF457A1C280C4B56003EB2FD /* ChartView */,
 				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
 			);
@@ -226,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				DF457A1D280C4C5D003EB2FD /* ChartView.swift */,
+				DF46A278280EB9AB00BC2757 /* CV Layer providers */,
 				DF457A20280C4C7D003EB2FD /* CV Calculations */,
 				DF457A1F280C4C73003EB2FD /* CV Models */,
 			);
@@ -236,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				DF457A21280C4C98003EB2FD /* CVCandle.swift */,
-				DF457A24280C4CB3003EB2FD /* CVStyle.swift */,
+				DF457A24280C4CB3003EB2FD /* DefaultChartStyle.swift */,
 				DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */,
 			);
 			path = "CV Models";
@@ -252,6 +266,7 @@
 		DF457A2A280C5F78003EB2FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DF457A33280C7B8C003EB2FD /* Settings */,
 				DF457A2B280C5F81003EB2FD /* Response */,
 			);
 			path = Models;
@@ -263,6 +278,33 @@
 				DF457A2C280C5F8F003EB2FD /* MarketDataResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		DF457A32280C7ABE003EB2FD /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DF457A38280C7BE7003EB2FD /* ProfileTableViewCell.swift */,
+				DF457A3A280C7C00003EB2FD /* DefaultTableViewCell.swift */,
+				DF457A3C280C7C1A003EB2FD /* StaticTableViewCell.swift */,
+				DF457A3E280C7C42003EB2FD /* SwitchTableViewCell.swift */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
+		DF457A33280C7B8C003EB2FD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DF457A34280C7B98003EB2FD /* Section.swift */,
+				DF457A36280C7BB8003EB2FD /* SettingsTableViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DF46A278280EB9AB00BC2757 /* CV Layer providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CV Layer providers";
 			sourceTree = "<group>";
 		};
 		DF59E1A2280C1C54005910E6 /* UIPageView tabs */ = {
@@ -370,12 +412,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF11E7CF2809B6D0002C7299 /* AppDelegate.swift in Sources */,
+				DF457A39280C7BE7003EB2FD /* ProfileTableViewCell.swift in Sources */,
 				DF11E8002809BA70002C7299 /* PortfolioViewController.swift in Sources */,
-				DF457A25280C4CB3003EB2FD /* CVStyle.swift in Sources */,
+				DF457A25280C4CB3003EB2FD /* DefaultChartStyle.swift in Sources */,
 				DF11E7F42809B9EF002C7299 /* AuthorizedCoordinator.swift in Sources */,
 				DF11E7FE2809BA5D002C7299 /* TabBarController.swift in Sources */,
 				DF11E7D12809B6D0002C7299 /* SceneDelegate.swift in Sources */,
+				DF457A3D280C7C1A003EB2FD /* StaticTableViewCell.swift in Sources */,
 				DF457A2D280C5F8F003EB2FD /* MarketDataResponse.swift in Sources */,
+				DF457A35280C7B98003EB2FD /* Section.swift in Sources */,
 				DF457A1E280C4C5D003EB2FD /* ChartView.swift in Sources */,
 				DF11E7F22809B9D8002C7299 /* AppCoordinator.swift in Sources */,
 				DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */,
@@ -385,13 +430,16 @@
 				DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */,
 				DF11E7FC2809BA4C002C7299 /* SettingsCoordinator.swift in Sources */,
 				DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */,
+				DF457A3B280C7C00003EB2FD /* DefaultTableViewCell.swift in Sources */,
 				DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */,
 				DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */,
 				DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */,
 				DF457A27280C4CCB003EB2FD /* CVTimeframe.swift in Sources */,
 				DF11E7F62809BA03002C7299 /* ScreensFactory.swift in Sources */,
+				DF457A37280C7BB8003EB2FD /* SettingsTableViewModel.swift in Sources */,
 				DF11E7EB2809B8E5002C7299 /* ChildCoordinatable.swift in Sources */,
 				DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */,
+				DF457A3F280C7C42003EB2FD /* SwitchTableViewCell.swift in Sources */,
 				DF11E7E92809B8D0002C7299 /* AppCoordinatable.swift in Sources */,
 				DF11E7F82809BA27002C7299 /* PortfolioCoordinator.swift in Sources */,
 			);

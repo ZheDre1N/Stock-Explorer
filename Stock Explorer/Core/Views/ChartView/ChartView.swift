@@ -1,13 +1,11 @@
 import UIKit
 
 // swiftlint:disable all
-public class ChartView: UIView {
+class ChartView: UIView {
 
   // MARK: Dependencies
-  public var cvStyle = CVStyle()
-  
-  // MARK: Layer providers
-  
+  public var chartStyle: ChartStyleProvider = DefaultChartStyle()
+    
 
   // MARK: Interface
   public var dataSource: [CVCandle]? {
@@ -124,7 +122,7 @@ public class ChartView: UIView {
   // MARK: 1 Part
   private func drawTopBorder() { // 1 part
     addSubview(topBorder)
-    topBorder.backgroundColor = cvStyle.borderColor
+    topBorder.backgroundColor = chartStyle.borderColor
     topBorder.frame = CGRect(
       x: 0,
       y: 0,
@@ -207,7 +205,7 @@ public class ChartView: UIView {
         1.0
       )
 
-      textLabelLayer.foregroundColor = cvStyle.labelColor
+      textLabelLayer.foregroundColor = chartStyle.labelColor
       textLabelLayer.contentsScale = UIScreen.main.scale
       textLabelLayer.font = labelFont
       textLabelLayer.fontSize = labelSize
@@ -232,7 +230,7 @@ public class ChartView: UIView {
 
   private func drawGradientLayer() { // 2.1.3 part
     chartGradientLayer.frame = chartView.bounds
-    chartGradientLayer.colors = cvStyle.gradients
+    chartGradientLayer.colors = chartStyle.gradients
     chartView.layer.addSublayer(chartGradientLayer)
   }
 
@@ -265,7 +263,7 @@ public class ChartView: UIView {
       width: frame.size.width - sectionBorderWidth - auxiliaryViewWidth,
       height: chartBorderHeight
     )
-    chartBorder.backgroundColor = cvStyle.borderColor
+    chartBorder.backgroundColor = chartStyle.borderColor
   }
 
   private func drawLabelsView() { // 2.3 part
@@ -293,7 +291,7 @@ public class ChartView: UIView {
         width: textLabelLayerWidth,
         height: 15
       )
-      textLabelLayer.foregroundColor = cvStyle.labelColor
+      textLabelLayer.foregroundColor = chartStyle.labelColor
       textLabelLayer.contentsScale = UIScreen.main.scale
       textLabelLayer.font = labelFont
       textLabelLayer.fontSize = labelSize
@@ -349,7 +347,7 @@ public class ChartView: UIView {
       width: frame.size.width,
       height: auxiliaryBorderHeight
     )
-    auxiliaryBorderView.backgroundColor = cvStyle.borderColor
+    auxiliaryBorderView.backgroundColor = chartStyle.borderColor
   }
 
   private func drawAuxiliaryButton() { // 3.3 part
@@ -369,7 +367,7 @@ public class ChartView: UIView {
       // Fallback on earlier versions
     }
     auxiliaryButton.setImage(image, for: .normal)
-    auxiliaryButton.tintColor = cvStyle.fullButtonTintColor
+    auxiliaryButton.tintColor = chartStyle.fullButtonTintColor
     auxiliaryButton.addTarget(self, action: #selector(self.fullScreenButtonTapped), for: .touchUpInside)
   }
 
@@ -387,7 +385,7 @@ public class ChartView: UIView {
       width: sectionBorderWidth,
       height: frame.size.height - topBorderHeight
     )
-    sectionBorder.backgroundColor = cvStyle.borderColor
+    sectionBorder.backgroundColor = chartStyle.borderColor
   }
 
   // MARK: 5 Part
@@ -403,9 +401,9 @@ public class ChartView: UIView {
     let iconImage = UIImage(systemName: "line.diagonal")
     chartStyleButton.setImage(iconImage, for: .normal)
     chartStyleButton.backgroundColor = UIColor(white: 0.25, alpha: 0.25)
-    chartStyleButton.tintColor = cvStyle.changeStyleButtonColor
+    chartStyleButton.tintColor = chartStyle.changeStyleButtonColor
     chartStyleButton.layer.borderWidth = 1.0
-    chartStyleButton.layer.borderColor = cvStyle.changeStyleButtonColor.cgColor
+    chartStyleButton.layer.borderColor = chartStyle.changeStyleButtonColor.cgColor
     chartStyleButton.layer.cornerRadius = 8
     chartStyleButton.addTarget(self, action: #selector(self.chartStyleButtonTapped), for: .touchUpInside)
   }
@@ -422,7 +420,7 @@ public class ChartView: UIView {
     if let path = createChartLinePath() {
       let lineLayer = CAShapeLayer()
       lineLayer.path = path.cgPath
-      lineLayer.strokeColor = cvStyle.chartLineColor.cgColor
+      lineLayer.strokeColor = chartStyle.chartLineColor.cgColor
       lineLayer.fillColor = UIColor.clear.cgColor
       lineLayer.lineWidth = 2
       chartDataLayer.addSublayer(lineLayer)
@@ -512,7 +510,7 @@ public class ChartView: UIView {
           height: textLayerHeight
         )
 
-        textLayer.foregroundColor = cvStyle.labelColor
+        textLayer.foregroundColor = chartStyle.labelColor
         textLayer.contentsScale = UIScreen.main.scale
         textLayer.font = labelFont
         textLayer.fontSize = labelSize
@@ -552,8 +550,8 @@ public class ChartView: UIView {
       )
 
       pointerPriceLabel.removeAllAnimations()
-      pointerPriceLabel.foregroundColor = cvStyle.labelColor
-      pointerPriceLabel.backgroundColor = cvStyle.currentPricePointerColor.cgColor
+      pointerPriceLabel.foregroundColor = chartStyle.labelColor
+      pointerPriceLabel.backgroundColor = chartStyle.currentPricePointerColor.cgColor
       pointerPriceLabel.contentsScale = UIScreen.main.scale
       pointerPriceLabel.font = labelFont
       pointerPriceLabel.fontSize = labelSize
@@ -586,7 +584,7 @@ public class ChartView: UIView {
       pathLine.addLine(to: CGPoint(x: chartView.frame.size.width, y: textLayerY - textLayerHeight - 2))
       pointerHorisontalLine.path = pathLine.cgPath
       pointerHorisontalLine.lineDashPattern = [6, 6]
-      pointerHorisontalLine.strokeColor = cvStyle.currentPricePointerColor.cgColor
+      pointerHorisontalLine.strokeColor = chartStyle.currentPricePointerColor.cgColor
       pointerHorisontalLine.lineWidth = 1
       chartView.layer.addSublayer(pointerHorisontalLine)
     }
@@ -661,7 +659,7 @@ public class ChartView: UIView {
     pathLine.move(to: CGPoint(x: xTouchPoint, y: 0 - chartViewPadding))
     pathLine.addLine(to: CGPoint(x: xTouchPoint, y: chartView.frame.size.height + chartViewPadding + 5))
     longPressVerticalLine.path = pathLine.cgPath
-    longPressVerticalLine.strokeColor = cvStyle.currentPricePointerColor.cgColor
+    longPressVerticalLine.strokeColor = chartStyle.currentPricePointerColor.cgColor
     longPressVerticalLine.lineWidth = 1
     chartView.layer.addSublayer(longPressVerticalLine)
   }
@@ -677,8 +675,8 @@ public class ChartView: UIView {
     )
 
     longPressPointExternalCircle.path = externalCirclePath.cgPath
-    longPressPointExternalCircle.fillColor = cvStyle.externalPointColor.cgColor
-    longPressPointExternalCircle.strokeColor = cvStyle.externalPointColor.cgColor
+    longPressPointExternalCircle.fillColor = chartStyle.externalPointColor.cgColor
+    longPressPointExternalCircle.strokeColor = chartStyle.externalPointColor.cgColor
     longPressPointExternalCircle.lineWidth = 1
     chartView.layer.addSublayer(longPressPointExternalCircle)
 
@@ -692,8 +690,8 @@ public class ChartView: UIView {
     )
 
     longPressPointInternalCircle.path = internalCirclePath.cgPath
-    longPressPointInternalCircle.fillColor = cvStyle.internPointColor.cgColor
-    longPressPointInternalCircle.strokeColor = cvStyle.internPointColor.cgColor
+    longPressPointInternalCircle.fillColor = chartStyle.internPointColor.cgColor
+    longPressPointInternalCircle.strokeColor = chartStyle.internPointColor.cgColor
     longPressPointInternalCircle.lineWidth = 1
     chartView.layer.addSublayer(longPressPointInternalCircle)
   }
@@ -716,8 +714,8 @@ public class ChartView: UIView {
       height: 15
     )
     longPressTextLabel.removeAllAnimations()
-    longPressTextLabel.foregroundColor = cvStyle.labelColor
-    longPressTextLabel.backgroundColor = cvStyle.currentPricePointerColor.cgColor
+    longPressTextLabel.foregroundColor = chartStyle.labelColor
+    longPressTextLabel.backgroundColor = chartStyle.currentPricePointerColor.cgColor
     longPressTextLabel.contentsScale = UIScreen.main.scale
     longPressTextLabel.font = labelFont
     longPressTextLabel.fontSize = labelSize

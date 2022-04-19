@@ -701,13 +701,9 @@ class ChartView: UIView {
 
 extension ChartView: UIScrollViewDelegate {
   public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    print("did scroll")
-
-    if let dataSource = dataSource {
-      // update drawableDataSourceRange
-      // update drawableDataSourcePoints
-      setNeedsLayout()
-    }
+    // update drawableDataSourceRange
+    // update drawableDataSourcePoints
+    setNeedsLayout()
   }
 }
 // swiftlint:enable all

@@ -183,9 +183,9 @@
 				DF11E7ED2809B8FC002C7299 /* AppFlow */,
 				DF11E7EF2809B90D002C7299 /* Child Coordinators */,
 				DF11E7EE2809B903002C7299 /* Factories */,
-				DF11E7F02809B91C002C7299 /* ViewControllers */,
-				DF457A2A280C5F78003EB2FD /* Models */,
-				DF11E8062809BEAE002C7299 /* Views */,
+				DF46A27F280F365F00BC2757 /* Portfolio Module */,
+				DF46A280280F371900BC2757 /* Search Module */,
+				DF46A281280F372600BC2757 /* Settings Module */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -195,6 +195,7 @@
 			children = (
 				DF11E7F12809B9D8002C7299 /* AppCoordinator.swift */,
 				DF11E7F32809B9EF002C7299 /* AuthorizedCoordinator.swift */,
+				DF11E7FD2809BA5D002C7299 /* TabBarController.swift */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -217,28 +218,6 @@
 			path = "Child Coordinators";
 			sourceTree = "<group>";
 		};
-		DF11E7F02809B91C002C7299 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				DF11E7FD2809BA5D002C7299 /* TabBarController.swift */,
-				DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */,
-				DF11E8012809BA81002C7299 /* SearchViewController.swift */,
-				DF11E8032809BA92002C7299 /* SettingsViewController.swift */,
-				DF59E1A2280C1C54005910E6 /* UIPageView tabs */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DF11E8062809BEAE002C7299 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DF457A32280C7ABE003EB2FD /* Table Cells */,
-				DF457A1C280C4B56003EB2FD /* ChartView */,
-				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		DF457A1C280C4B56003EB2FD /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,15 +235,6 @@
 				DF457A26280C4CCB003EB2FD /* CVTimeframe.swift */,
 			);
 			path = "CV Models";
-			sourceTree = "<group>";
-		};
-		DF457A2A280C5F78003EB2FD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DF457A33280C7B8C003EB2FD /* Settings */,
-				DF457A2B280C5F81003EB2FD /* Response */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DF457A2B280C5F81003EB2FD /* Response */ = {
@@ -286,15 +256,6 @@
 			path = "Table Cells";
 			sourceTree = "<group>";
 		};
-		DF457A33280C7B8C003EB2FD /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				DF457A36280C7BB8003EB2FD /* SettingsTableViewModel.swift */,
-				DF46A27B280EF81E00BC2757 /* Section.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		DF46A278280EB9AB00BC2757 /* CV Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +264,45 @@
 				DF46A27D280F02E400BC2757 /* ChartGridLayerProvider.swift */,
 			);
 			path = "CV Providers";
+			sourceTree = "<group>";
+		};
+		DF46A27F280F365F00BC2757 /* Portfolio Module */ = {
+			isa = PBXGroup;
+			children = (
+				DF59E1A2280C1C54005910E6 /* UIPageView tabs */,
+				DF457A2B280C5F81003EB2FD /* Response */,
+				DF457A1C280C4B56003EB2FD /* ChartView */,
+				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
+				DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */,
+			);
+			path = "Portfolio Module";
+			sourceTree = "<group>";
+		};
+		DF46A280280F371900BC2757 /* Search Module */ = {
+			isa = PBXGroup;
+			children = (
+				DF11E8012809BA81002C7299 /* SearchViewController.swift */,
+			);
+			path = "Search Module";
+			sourceTree = "<group>";
+		};
+		DF46A281280F372600BC2757 /* Settings Module */ = {
+			isa = PBXGroup;
+			children = (
+				DF46A283280F37A600BC2757 /* Models */,
+				DF457A32280C7ABE003EB2FD /* Table Cells */,
+				DF11E8032809BA92002C7299 /* SettingsViewController.swift */,
+				DF457A36280C7BB8003EB2FD /* SettingsTableViewModel.swift */,
+			);
+			path = "Settings Module";
+			sourceTree = "<group>";
+		};
+		DF46A283280F37A600BC2757 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF46A27B280EF81E00BC2757 /* Section.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DF59E1A2280C1C54005910E6 /* UIPageView tabs */ = {

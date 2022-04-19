@@ -55,7 +55,7 @@ extension PortfolioViewController: UITableViewDelegate {
 
 extension PortfolioViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 2
+    return 3
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

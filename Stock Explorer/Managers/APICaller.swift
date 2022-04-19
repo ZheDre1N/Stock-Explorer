@@ -7,9 +7,7 @@
 
 import Foundation
 
-/// Object to manage API Calls
 final class APICaller {
-  /// Singleton
   public static let shared = APICaller()
   private init() {}
 
@@ -17,6 +15,7 @@ final class APICaller {
   public func marketData(
     for symbol: String,
     numberOfDays: TimeInterval = 3000,
+    timeframe: APITimeframe = .oneHour,
     completion: @escaping(Result<MarketDataResponse, Error>) -> Void
   ) {
     let today = Date().addingTimeInterval(-(3600 * 24))
@@ -26,13 +25,23 @@ final class APICaller {
       for: .marketData,
       queryParams: [
         "symbol": symbol,
-        "resolution": "60",
+        "resolution": timeframe.rawValue,
         "from": "\(Int(prior.timeIntervalSince1970))",
         "to": "\(Int(today.timeIntervalSince1970))"
       ]
     )
-
     request(url: url, expecting: MarketDataResponse.self, completion: completion)
+  }
+
+  public enum APITimeframe: String {
+    case oneMin = "1"
+    case fiveMin = "5"
+    case fifteenMin = "15"
+    case thirtyMin = "30"
+    case oneHour = "60"
+    case oneDay = "D"
+    case oneWeek = "W"
+    case oneMonth = "M"
   }
 
   // MARK: Private
@@ -51,24 +60,27 @@ final class APICaller {
     case noDataReturned
   }
 
-  private func url(for endpoint: Endpoint, queryParams: [String: String] = [:]) -> URL? {
+  private func url(
+    for endpoint: Endpoint,
+    queryParams: [String: String] = [:]
+  ) -> URL? {
     var urlString = Constants.baseURL + endpoint.rawValue
     var queryItems = [URLQueryItem]()
-    // add any params
+
     for (name, value) in queryParams {
       queryItems.append(.init(name: name, value: value))
     }
 
-    // add token
     queryItems.append(.init(name: "token", value: Constants.apiKey))
-
-    // Convert queri items to suffix string
     urlString += "?" + queryItems.map { "\($0.name)=\($0.value ?? "")" }.joined(separator: "&")
-
     return URL(string: urlString)
   }
 
-  private func request<T: Codable>(url: URL?, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+  private func request<T: Codable>(
+    url: URL?,
+    expecting: T.Type,
+    completion: @escaping (Result<T, Error>
+    ) -> Void) {
     guard let url = url else {
       completion(.failure(APIError.invalidURL))
       return

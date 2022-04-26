@@ -63,7 +63,7 @@ final class TabBarController: UITabBarController {
   }
 
   private func customizeTabBarsAppearance() {
-    tabBar.tintColor = .red
+    tabBar.tintColor = .SECyan
     tabBar.unselectedItemTintColor = .secondaryLabel
   }
 }

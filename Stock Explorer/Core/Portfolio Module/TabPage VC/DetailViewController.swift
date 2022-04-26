@@ -43,7 +43,12 @@ class DetailViewController: UIViewController {
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    table.frame = view.bounds
+    table.frame = CGRect(
+      x: 0,
+      y: 170,
+      width: self.view.frame.size.width,
+      height: self.view.frame.size.height
+    )
   }
 
   private func configureViewController() {

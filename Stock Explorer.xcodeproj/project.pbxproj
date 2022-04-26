@@ -42,6 +42,11 @@
 		DF46A27E280F02E400BC2757 /* ChartGridLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46A27D280F02E400BC2757 /* ChartGridLayerProvider.swift */; };
 		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
 		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
+		DFF5EEFD28132B7D00435403 /* DetailTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */; };
+		DFF5EEFF28132BF200435403 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EEFE28132BF200435403 /* TabPageViewController.swift */; };
+		DFF5EF0128132C1200435403 /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0028132C1200435403 /* TabPageOption.swift */; };
+		DFF5EF0428132C3000435403 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0328132C3000435403 /* TabView.swift */; };
+		DFF5EF0628132C4C00435403 /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0528132C4C00435403 /* TabCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +87,11 @@
 		DF46A27D280F02E400BC2757 /* ChartGridLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGridLayerProvider.swift; sourceTree = "<group>"; };
 		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
+		DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabPageViewController.swift; sourceTree = "<group>"; };
+		DFF5EEFE28132BF200435403 /* TabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
+		DFF5EF0028132C1200435403 /* TabPageOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageOption.swift; sourceTree = "<group>"; };
+		DFF5EF0328132C3000435403 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		DFF5EF0528132C4C00435403 /* TabCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,7 @@
 		DF11E7E52809B895002C7299 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DFF5EEFA28132A3100435403 /* Modules */,
 				DF11E7E72809B8AA002C7299 /* Extensions */,
 				DF11E7E62809B8A3002C7299 /* Protocols */,
 			);
@@ -218,14 +229,14 @@
 			path = "Child Coordinators";
 			sourceTree = "<group>";
 		};
-		DF457A1C280C4B56003EB2FD /* ChartView */ = {
+		DF457A1C280C4B56003EB2FD /* 2. ChartView */ = {
 			isa = PBXGroup;
 			children = (
 				DF457A1D280C4C5D003EB2FD /* ChartView.swift */,
 				DF46A278280EB9AB00BC2757 /* CV Providers */,
 				DF457A1F280C4C73003EB2FD /* CV Models */,
 			);
-			path = ChartView;
+			path = "2. ChartView";
 			sourceTree = "<group>";
 		};
 		DF457A1F280C4C73003EB2FD /* CV Models */ = {
@@ -269,9 +280,9 @@
 		DF46A27F280F365F00BC2757 /* Portfolio Module */ = {
 			isa = PBXGroup;
 			children = (
-				DF59E1A2280C1C54005910E6 /* UIPageView tabs */,
+				DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */,
+				DF59E1A2280C1C54005910E6 /* TabPage VC */,
 				DF457A2B280C5F81003EB2FD /* Response */,
-				DF457A1C280C4B56003EB2FD /* ChartView */,
 				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
 				DF11E7FF2809BA70002C7299 /* PortfolioViewController.swift */,
 			);
@@ -305,13 +316,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DF59E1A2280C1C54005910E6 /* UIPageView tabs */ = {
+		DF59E1A2280C1C54005910E6 /* TabPage VC */ = {
 			isa = PBXGroup;
 			children = (
 				DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */,
 				DF59E1A3280C2865005910E6 /* FullChartViewController.swift */,
 			);
-			path = "UIPageView tabs";
+			path = "TabPage VC";
+			sourceTree = "<group>";
+		};
+		DFF5EEFA28132A3100435403 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DFF5EEFB28132A4600435403 /* 1. TabPageViewController */,
+				DF457A1C280C4B56003EB2FD /* 2. ChartView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DFF5EEFB28132A4600435403 /* 1. TabPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DFF5EEFE28132BF200435403 /* TabPageViewController.swift */,
+				DFF5EF0328132C3000435403 /* TabView.swift */,
+				DFF5EF0528132C4C00435403 /* TabCollectionCell.swift */,
+				DFF5EF0028132C1200435403 /* TabPageOption.swift */,
+			);
+			path = "1. TabPageViewController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF5EEFD28132B7D00435403 /* DetailTabPageViewController.swift in Sources */,
 				DF11E7CF2809B6D0002C7299 /* AppDelegate.swift in Sources */,
 				DF457A39280C7BE7003EB2FD /* ProfileTableViewCell.swift in Sources */,
 				DF11E8002809BA70002C7299 /* PortfolioViewController.swift in Sources */,
@@ -424,16 +456,20 @@
 				DF457A2F280C6860003EB2FD /* DateFormatter + Ext..swift in Sources */,
 				DF457A31280C77A8003EB2FD /* UIColor + Ext..swift in Sources */,
 				DF11E7FA2809BA3B002C7299 /* SearchCoordinator.swift in Sources */,
+				DFF5EF0428132C3000435403 /* TabView.swift in Sources */,
 				DF457A22280C4C98003EB2FD /* CVCandle.swift in Sources */,
 				DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */,
+				DFF5EEFF28132BF200435403 /* TabPageViewController.swift in Sources */,
 				DF11E7FC2809BA4C002C7299 /* SettingsCoordinator.swift in Sources */,
 				DF11E8022809BA81002C7299 /* SearchViewController.swift in Sources */,
 				DF457A3B280C7C00003EB2FD /* DefaultTableViewCell.swift in Sources */,
 				DF11E8042809BA92002C7299 /* SettingsViewController.swift in Sources */,
 				DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */,
+				DFF5EF0628132C4C00435403 /* TabCollectionCell.swift in Sources */,
 				DF11E8082809BEEB002C7299 /* PortfolioTableViewCell.swift in Sources */,
 				DF457A27280C4CCB003EB2FD /* CVTimeframe.swift in Sources */,
 				DF11E7F62809BA03002C7299 /* ScreensFactory.swift in Sources */,
+				DFF5EF0128132C1200435403 /* TabPageOption.swift in Sources */,
 				DF457A37280C7BB8003EB2FD /* SettingsTableViewModel.swift in Sources */,
 				DF11E7EB2809B8E5002C7299 /* ChildCoordinatable.swift in Sources */,
 				DF457A29280C5E23003EB2FD /* APICaller.swift in Sources */,

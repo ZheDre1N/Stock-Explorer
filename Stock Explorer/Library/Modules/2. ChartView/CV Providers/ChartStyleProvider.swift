@@ -20,7 +20,7 @@ protocol ChartStyleProvider {
 }
 
 public class DefaultChartStyle: ChartStyleProvider {
-  var borderColor: UIColor = .label
+  var borderColor: UIColor = .lightGray
   var changeStyleButtonColor: UIColor = .SECyan
   var fullButtonTintColor: UIColor = .label
   var chartLineColor: UIColor = .SECyan

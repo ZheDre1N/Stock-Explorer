@@ -26,7 +26,7 @@ class TabCollectionCell: UICollectionViewCell {
       } else {
         unHighlightTitle()
       }
-      selectedBarView.backgroundColor = option.currentColor
+      selectedBarView.backgroundColor = option.highlightedColor
     }
   }
 
@@ -49,7 +49,6 @@ class TabCollectionCell: UICollectionViewCell {
 
   private let selectedBarView: UIView = {
     let view = UIView()
-    view.isHidden = true
     return view
   }()
 
@@ -102,12 +101,12 @@ extension TabCollectionCell {
   }
 
   func highlightTitle() {
-    selectButton.setTitleColor(option.currentColor, for: .normal)
+    selectButton.setTitleColor(option.highlightedColor, for: .normal)
     selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: option.fontSize)
   }
 
   func unHighlightTitle() {
-    selectButton.setTitleColor(option.defaultColor, for: .normal)
+    selectButton.setTitleColor(option.unHighlightedColorColor, for: .normal)
     selectButton.titleLabel?.font = UIFont.systemFont(ofSize: option.fontSize)
   }
 }

@@ -280,7 +280,7 @@
 		DF46A27F280F365F00BC2757 /* Portfolio Module */ = {
 			isa = PBXGroup;
 			children = (
-				DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */,
+				DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */,
 				DF59E1A2280C1C54005910E6 /* TabPage VC */,
 				DF457A2B280C5F81003EB2FD /* Response */,
 				DF11E8072809BEEB002C7299 /* PortfolioTableViewCell.swift */,
@@ -319,7 +319,7 @@
 		DF59E1A2280C1C54005910E6 /* TabPage VC */ = {
 			isa = PBXGroup;
 			children = (
-				DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */,
+				DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */,
 				DF59E1A3280C2865005910E6 /* FullChartViewController.swift */,
 			);
 			path = "TabPage VC";

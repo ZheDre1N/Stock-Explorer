@@ -92,7 +92,7 @@ class TabView: UIView {
     bottomBorder.backgroundColor = option.navBarBottomBorderColor
 
     // 3. CurrentBarView
-    currentBarView.backgroundColor = option.currentColor
+    currentBarView.backgroundColor = option.highlightedColor
   }
 
   private func configureDataSource() {
@@ -197,31 +197,33 @@ extension TabView {
    - parameter shouldScroll:
    */
   private func moveCurrentBarView(_ indexPath: IndexPath, animated: Bool, shouldScroll: Bool) {
-//    if shouldScroll {
-//      collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
-//      layoutIfNeeded()
-//      collectionViewContentOffsetX = 0.0
+    if shouldScroll {
+      collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
+      layoutIfNeeded()
+      collectionViewContentOffsetX = 0.0
 //      currentBarViewWidth = 0.0
-//    }
-//    if let cell = collectionView.cellForItem(at: indexPath) as? TabCollectionCell {
-//      currentBarView.isHidden = false
-//      if animated && shouldScroll {
-//        cell.isCurrent = true
-//      }
-//      cell.hideCurrentBarView()
-//      currentBarViewWidthConstraint.constant = cell.frame.width
-//      currentBarViewLeftConstraint?.constant = cell.frame.origin.x
-//      UIView.animate(withDuration: 0.2, animations: {
-//        self.layoutIfNeeded()
-//      }, completion: { _ in
-//        if !animated && shouldScroll {
-//          cell.isCurrent = true
-//        }
-//
-//        self.updateCollectionViewUserInteractionEnabled(true)
-//      })
-//    }
-//    beforeIndex = currentIndex
+    }
+    if let currentCell = collectionView.cellForItem(at: indexPath) as? TabCollectionCell {
+      currentBarView.isHidden = false
+      if animated && shouldScroll {
+        currentCell.isCurrent = true
+      }
+      currentCell.hideCurrentBarView()
+//      currentBarViewWidthConstraint.constant = currentCell.frame.width
+//      currentBarViewLeftConstraint?.constant = currentCell.frame.origin.x
+      currentBarView.frame.origin = CGPoint(x: currentCell.frame.origin.x, y: currentBarView.frame.origin.y)
+      currentBarView.frame.size.width = currentCell.frame.width
+      UIView.animate(withDuration: 0.2, animations: {
+        self.layoutIfNeeded()
+      }, completion: { _ in
+        if !animated && shouldScroll {
+          currentCell.isCurrent = true
+        }
+
+        self.updateCollectionViewUserInteractionEnabled(true)
+      })
+    }
+    beforeIndex = currentIndex
   }
 
   func updateCollectionViewUserInteractionEnabled(_ userInteractionEnabled: Bool) {

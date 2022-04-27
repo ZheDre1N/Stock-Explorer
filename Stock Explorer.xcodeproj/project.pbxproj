@@ -42,12 +42,23 @@
 		DF46A27E280F02E400BC2757 /* ChartGridLayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46A27D280F02E400BC2757 /* ChartGridLayerProvider.swift */; };
 		DF59E1A1280C1C4F005910E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */; };
 		DF59E1A4280C2865005910E6 /* FullChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59E1A3280C2865005910E6 /* FullChartViewController.swift */; };
+		DFEC009A28196E5C005ADF32 /* StockExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEC009928196E5C005ADF32 /* StockExplorerTests.swift */; };
 		DFF5EEFD28132B7D00435403 /* DetailTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */; };
 		DFF5EEFF28132BF200435403 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EEFE28132BF200435403 /* TabPageViewController.swift */; };
 		DFF5EF0128132C1200435403 /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0028132C1200435403 /* TabPageOption.swift */; };
 		DFF5EF0428132C3000435403 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0328132C3000435403 /* TabView.swift */; };
 		DFF5EF0628132C4C00435403 /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF5EF0528132C4C00435403 /* TabCollectionCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFEC009B28196E5C005ADF32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF11E7C32809B6D0002C7299 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF11E7CA2809B6D0002C7299;
+			remoteInfo = "Stock Explorer";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DF11E7CB2809B6D0002C7299 /* Stock Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +98,8 @@
 		DF46A27D280F02E400BC2757 /* ChartGridLayerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartGridLayerProvider.swift; sourceTree = "<group>"; };
 		DF59E1A0280C1C4F005910E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF59E1A3280C2865005910E6 /* FullChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChartViewController.swift; sourceTree = "<group>"; };
+		DFEC009728196E5C005ADF32 /* Stock ExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock ExplorerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEC009928196E5C005ADF32 /* StockExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockExplorerTests.swift; sourceTree = "<group>"; };
 		DFF5EEFC28132B7D00435403 /* DetailTabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabPageViewController.swift; sourceTree = "<group>"; };
 		DFF5EEFE28132BF200435403 /* TabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
 		DFF5EF0028132C1200435403 /* TabPageOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageOption.swift; sourceTree = "<group>"; };
@@ -102,6 +115,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFEC009428196E5C005ADF32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -109,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DF11E7CD2809B6D0002C7299 /* Stock Explorer */,
+				DFEC009828196E5C005ADF32 /* Stock ExplorerTests */,
 				DF11E7CC2809B6D0002C7299 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DF11E7CB2809B6D0002C7299 /* Stock Explorer.app */,
+				DFEC009728196E5C005ADF32 /* Stock ExplorerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,6 +347,14 @@
 			path = "TabPage VC";
 			sourceTree = "<group>";
 		};
+		DFEC009828196E5C005ADF32 /* Stock ExplorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFEC009928196E5C005ADF32 /* StockExplorerTests.swift */,
+			);
+			path = "Stock ExplorerTests";
+			sourceTree = "<group>";
+		};
 		DFF5EEFA28132A3100435403 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +398,24 @@
 			productReference = DF11E7CB2809B6D0002C7299 /* Stock Explorer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DFEC009628196E5C005ADF32 /* Stock ExplorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFEC009F28196E5C005ADF32 /* Build configuration list for PBXNativeTarget "Stock ExplorerTests" */;
+			buildPhases = (
+				DFEC009328196E5C005ADF32 /* Sources */,
+				DFEC009428196E5C005ADF32 /* Frameworks */,
+				DFEC009528196E5C005ADF32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFEC009C28196E5C005ADF32 /* PBXTargetDependency */,
+			);
+			name = "Stock ExplorerTests";
+			productName = "Stock ExplorerTests";
+			productReference = DFEC009728196E5C005ADF32 /* Stock ExplorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -380,6 +428,10 @@
 				TargetAttributes = {
 					DF11E7CA2809B6D0002C7299 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					DFEC009628196E5C005ADF32 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = DF11E7CA2809B6D0002C7299;
 					};
 				};
 			};
@@ -399,6 +451,7 @@
 			projectRoot = "";
 			targets = (
 				DF11E7CA2809B6D0002C7299 /* Stock Explorer */,
+				DFEC009628196E5C005ADF32 /* Stock ExplorerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,6 +463,13 @@
 			files = (
 				DF11E7DB2809B6D0002C7299 /* LaunchScreen.storyboard in Resources */,
 				DF11E7D82809B6D0002C7299 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC009528196E5C005ADF32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +541,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFEC009328196E5C005ADF32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFEC009A28196E5C005ADF32 /* StockExplorerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFEC009C28196E5C005ADF32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF11E7CA2809B6D0002C7299 /* Stock Explorer */;
+			targetProxy = DFEC009B28196E5C005ADF32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DF11E7D92809B6D0002C7299 /* LaunchScreen.storyboard */ = {
@@ -665,6 +741,42 @@
 			};
 			name = Release;
 		};
+		DFEC009D28196E5C005ADF32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z783FFF863;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EugeneDudkin.Stock-ExplorerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stock Explorer.app/Stock Explorer";
+			};
+			name = Debug;
+		};
+		DFEC009E28196E5C005ADF32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z783FFF863;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EugeneDudkin.Stock-ExplorerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stock Explorer.app/Stock Explorer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -682,6 +794,15 @@
 			buildConfigurations = (
 				DF11E7E02809B6D0002C7299 /* Debug */,
 				DF11E7E12809B6D0002C7299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFEC009F28196E5C005ADF32 /* Build configuration list for PBXNativeTarget "Stock ExplorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEC009D28196E5C005ADF32 /* Debug */,
+				DFEC009E28196E5C005ADF32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

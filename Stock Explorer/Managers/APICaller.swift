@@ -15,7 +15,7 @@ final class APICaller {
   public func marketData(
     for symbol: String,
     numberOfDays: TimeInterval = 3000,
-    timeframe: APITimeframe = .oneHour,
+    timeframe: APITimeframe = .oneDay,
     completion: @escaping(Result<MarketDataResponse, Error>) -> Void
   ) {
     let today = Date().addingTimeInterval(-(3600 * 24))
